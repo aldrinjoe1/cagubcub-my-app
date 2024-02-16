@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #calculator {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 80%; /* Adjust the width as needed */
+            max-width: 400px;
+        }
+
+        #display {
+            padding: 15px;
+            font-size: 30px;
+            text-align: right;
+            border-bottom: 2px solid #ddd;
+        }
+
+        #buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        button {
+            font-size: 20px;
+            padding: 15px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #eee;
+        }
+
+        #equals {
+            grid-column: span 4;
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        #clear {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        #back-button {
+            grid-column: span 4;
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <div id="display">0</div>
+        <div id="buttons">
+            <button onclick="addToDisplay('7')">7</button>
+            <button onclick="addToDisplay('8')">8</button>
+            <button onclick="addToDisplay('9')">9</button>
+            <button onclick="addToDisplay('/')">/</button>
+            <button onclick="addToDisplay('4')">4</button>
+            <button onclick="addToDisplay('5')">5</button>
+            <button onclick="addToDisplay('6')">6</button>
+            <button onclick="addToDisplay('*')">*</button>
+            <button onclick="addToDisplay('1')">1</button>
+            <button onclick="addToDisplay('2')">2</button>
+            <button onclick="addToDisplay('3')">3</button>
+            <button onclick="addToDisplay('-')">-</button>
+            <button onclick="addToDisplay('0')">0</button>
+            <button onclick="addToDisplay('.')">.</button>
+            <button id="clear" onclick="clearDisplay()">C</button>
+            <button onclick="addToDisplay('+')">+</button>
+            <button id="equals" onclick="calculate()">=</button>
+            <button id="back-button" onclick="goToMainPage()">Go Back</button>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById('display');
+
+        function addToDisplay(value) {
+            if (display.textContent === '0') {
+                display.textContent = '';
+            }
+            display.textContent += value;
+        }
+
+        function clearDisplay() {
+            display.textContent = '0';
+        }
+
+        function calculate() {
+            try {
+                display.textContent = eval(display.textContent);
+            } catch (error) {
+                display.textContent = 'Error';
+            }
+        }
+
+        function goToMainPage() {
+            // Change this URL to the URL of your main page
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
