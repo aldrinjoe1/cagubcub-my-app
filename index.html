@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -8,7 +9,23 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
+
+<!-- Navbar at the top -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">myApp</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
 
 <div class="jumbotron text-center">
   <h1>myApp</h1>
@@ -18,19 +35,25 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <h3>calculator</h3>
-      <p></p>
-      <p></p>
+      <h3>Calculator</h3>
+      <p>
+        <!-- Button for Calculator with link to calculator.html -->
+        <a href="calculator.html" class="btn btn-primary">Calculator Button</a>
+      </p>
     </div>
     <div class="col-sm-4">
-      <h3>to do list</h3>
-      <p></p>
-      <p></p>
+      <h3>To Do List</h3>
+      <p>
+        <!-- Button for To Do List -->
+        <button type="button" class="btn btn-primary">To Do List Button</button>
+      </p>
     </div>
     <div class="col-sm-4">
-      <h3>search</h3>        
-      <p></p>
-      <p></p>
+      <h3>Search</h3>        
+      <p>
+        <!-- Button for Search -->
+        <button type="button" class="btn btn-primary">Search Button</button>
+      </p>
     </div>
   </div>
 </div>
